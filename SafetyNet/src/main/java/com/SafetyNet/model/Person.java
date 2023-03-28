@@ -13,9 +13,9 @@ public class Person {
     private Integer phone;
     private  Date birthday;
     private MedicalRecord medicalRecord;
-    private  Firesation firesation;
+    private Firestation firesation;
 
-    public Person(Integer id, String name, String lastName, String mail, String adress, String city, Integer phone, Date birthday, MedicalRecord medicalRecord, Firesation firesation) {
+    public Person(Integer id, String name, String lastName, String mail, String adress, String city, Integer phone, Date birthday, MedicalRecord medicalRecord, Firestation firesation) {
         this.id = id;
         Name = name;
         this.lastName = lastName;
@@ -103,11 +103,11 @@ public class Person {
         this.medicalRecord = medicalRecord;
     }
 
-    public Firesation getFiresation() {
+    public Firestation getFiresation() {
         return firesation;
     }
 
-    public void setFiresation(Firesation firesation) {
+    public void setFiresation(Firestation firesation) {
         this.firesation = firesation;
     }
 }

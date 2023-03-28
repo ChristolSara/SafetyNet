@@ -1,13 +1,13 @@
 package com.SafetyNet.model;
 
-public class Firesation {
+public class Firestation {
     private Integer station;
     private  Person person;
 
-    public Firesation() {
+    public Firestation() {
     }
 
-    public Firesation(Integer station, Person person) {
+    public Firestation(Integer station, Person person) {
         this.station = station;
         this.person = person;
     }
