@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="" />
+    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="2 commit person,firestation  model ,controler">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/MedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/MedicalRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/MedicalRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/MedicalRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/resources/json.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +22,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -28,6 +36,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2NdFVefYoAmfqJ3PGT637q0a6Ki" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,7 +45,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/StagiaireDEV/Documents/sara-christol/tp/spring/SafetyNet",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/StagiaireDEV/Documents/sara-christol/tp/spring/patients/pom.xml",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -44,6 +54,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.SafetyNet.service" />
       <recent name="com.SafetyNet.model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StagiaireDEV\Documents\sara-christol\tp\spring\SafetyNet\SafetyNet\src\main\resources" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,6 +68,18 @@
       <option name="presentableId" value="Default" />
       <updated>1679986079085</updated>
     </task>
+    <task id="LOCAL-00001" summary="2 commit person,firestation  model ,controler">
+      <created>1679989853637</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679989853637</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2 commit person,firestation  model ,controler" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 commit person,firestation  model ,controler" />
   </component>
 </project>
