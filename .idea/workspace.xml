@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="2 commit medicalRecord  model ,controler">
-      <change afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/Config/configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/SafetyNetApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/SafetyNetApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/model/Firestation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/model/MedicalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/model/MedicalRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/resources/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/resources/data.json" afterDir="false" />
+    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="3 file reder">
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/Config/configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/Config/configuration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,13 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679993583904</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="3 file reder">
+      <created>1680009676560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680009676560</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2 commit person,firestation  model ,controler" />
     <MESSAGE value="2 commit medicalRecord  model ,controler" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 commit medicalRecord  model ,controler" />
+    <MESSAGE value="3 file reder" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 file reder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

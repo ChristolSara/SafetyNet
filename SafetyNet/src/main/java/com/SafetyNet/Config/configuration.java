@@ -7,11 +7,11 @@ import java.io.*;
 @Component
 public class configuration {
 
-    public void Configuration() throws FileNotFoundException, IOException {
+    public String Configuration() throws FileNotFoundException, IOException {
         // Le fichier d'entrée
         File file = new File("../data.json");
 
-        System.out.println(file);
+       return file.toString();
     }
 
 }
