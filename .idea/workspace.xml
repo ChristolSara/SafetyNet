@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="3 file reder">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/Config/configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/Config/configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/SafetyNetApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/SafetyNetApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +51,12 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.SafetyNet.Config" />
       <recent name="com.SafetyNet.service" />
       <recent name="com.SafetyNet.model" />
     </key>
@@ -136,8 +141,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/SafetyNetApplication.java</url>
-          <line>6</line>
+          <line>10</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/Config/configuration.java</url>
+          <line>18</line>
+          <properties class="com.SafetyNet.Config.configuration">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
