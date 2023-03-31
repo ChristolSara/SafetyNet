@@ -4,23 +4,54 @@ import com.SafetyNet.model.Person;
 import com.SafetyNet.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class PersonController {
-    private PersonService personService;
+    private final PersonService personService;
 
-    @PostMapping(value="/person")
-    public Person ajouterPerson(@RequestBody Person person){
-       return personService.save(person);
+    public PersonController(PersonService personService) {
+        this.personService = personService;
     }
 
-    @PutMapping(value="/person")
-    public Person mettreAjourPerson(Person person){
-        return personService.update(person);
+
+
+//    @PostMapping(value="/person")
+//    public Person ajouterPerson(@RequestBody Person person){
+//       return personService.save(person);
+//    }
+//
+//    @PutMapping(value="/person")
+//    public Person mettreAjourPerson(Person person){
+//        return personService.update(person);
+//    }
+//    @DeleteMapping(value = "/person")
+//    public void supprimerPerson(Person person){
+//        personService.delete(person);
+//    }
+
+
+    @GetMapping(value="/allPersons")
+    public List<Person> findAllPersons(){
+
+        return personService.fibdAllPersons();
+        }
+     @GetMapping(value="/allMails")
+        public List <String> findAllMail(){
+
+        return personService.findAllMails();
+        }
+    @GetMapping(value="/allMails/{city}")
+    public List <String> findAllMailcity(@PathVariable String city){
+
+        return personService.findAllMailscity(city);
     }
-    @DeleteMapping(value = "/person")
-    public void supprimerPerson(Person person){
-        personService.delete(person);
+    @GetMapping(value="phoneAlert/firestation={fnbr}")
+    public List<String>phoneAlertNumber(@PathVariable String fnbr){
+        return personService.phoneAlert(fnbr);
     }
+
+
 
 
 }
