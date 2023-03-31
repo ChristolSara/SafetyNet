@@ -1,5 +1,6 @@
 package com.SafetyNet.contoller;
 
+import com.SafetyNet.contoller.DTO.InfoPersonDTO;
 import com.SafetyNet.model.Person;
 import com.SafetyNet.service.PersonService;
 import org.springframework.web.bind.annotation.*;
@@ -53,7 +54,7 @@ public class PersonController {
 
 
     @GetMapping(value="personInfo/firstName={firstName}/lastName={lastName}")
-    public List<String>personInfo(@PathVariable String firstName,@PathVariable String lastName){
+    public List<InfoPersonDTO>personInfo(@PathVariable String firstName, @PathVariable String lastName){
         return personService.personInfo(firstName,lastName);
     }
 

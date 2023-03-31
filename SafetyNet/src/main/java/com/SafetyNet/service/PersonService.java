@@ -105,11 +105,11 @@ public class PersonService {
 
 //retourner les info d'une personne avc param first- et lastname
 
-    public List<String> personInfo(String firstName, String lastName) {
+    public List<InfoPersonDTO> personInfo(String firstName, String lastName) {
 
         List<Person> persons = personRepository.findAllPersons();
         List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
-       List<InfoPersonDTO> infoPersonDTOs = new ArrayList<>();
+        List<InfoPersonDTO> infoPersonDTOs = new ArrayList<InfoPersonDTO>();
 
         for(Person person:persons){
 
@@ -128,7 +128,7 @@ public class PersonService {
         }
 
 
-        return null;
+        return infoPersonDTOs;
     }
 
 
