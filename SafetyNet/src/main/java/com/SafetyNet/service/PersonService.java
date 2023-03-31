@@ -1,6 +1,8 @@
 package com.SafetyNet.service;
 
+import com.SafetyNet.contoller.DTO.InfoPersonDTO;
 import com.SafetyNet.model.Firestation;
+import com.SafetyNet.model.MedicalRecord;
 import com.SafetyNet.model.Person;
 
 import com.SafetyNet.repository.FireStationRepository;
@@ -35,33 +37,35 @@ public class PersonService {
     //   }
 
 
-    public List<Person> fibdAllPersons(){
+    public List<Person> fibdAllPersons() {
         return personRepository.findAllPersons();
     }
-    public List<String> findAllMails(){
 
-      List <Person> persons =  personRepository.findAllPersons();
-      List <String> mails=new ArrayList<>();
+    public List<String> findAllMails() {
+
+        List<Person> persons = personRepository.findAllPersons();
+        List<String> mails = new ArrayList<>();
 
 
-        for(Person person:persons) {
+        for (Person person : persons) {
 
-        mails.add(person.getEmail());
+            mails.add(person.getEmail());
 
-      }
+        }
 
         return mails;
     }
+
     //chercher les emails par rapport au city
-    public List<String> findAllMailscity(String city){
+    public List<String> findAllMailscity(String city) {
 
-        List <Person> persons =  personRepository.findAllPersons();
-        List <String> mailsCity=new ArrayList<>();
+        List<Person> persons = personRepository.findAllPersons();
+        List<String> mailsCity = new ArrayList<>();
 
 
-        for(Person person:persons) {
+        for (Person person : persons) {
 
-            if(city.equals(person.getCity())){
+            if (city.equals(person.getCity())) {
                 mailsCity.add(person.getEmail());
             }
 
@@ -71,15 +75,15 @@ public class PersonService {
         return mailsCity;
     }
 
-   //retourne une list des n telephone des résidents qui apartients a la mm caserne
-    public List<String> phoneAlert(String fnbr){
+    //retourne une list des n telephone des résidents qui apartients a la mm caserne
+    public List<String> phoneAlert(String fnbr) {
 
-        List <Person> persons =  personRepository.findAllPersons();
+        List<Person> persons = personRepository.findAllPersons();
         List<Firestation> firestations = fireStationRepository.findAllFireStations();
-        List <String> phones=new ArrayList<>();
-        List<String> fires=new ArrayList<>();
+        List<String> phones = new ArrayList<>();
+        List<String> fires = new ArrayList<>();
 
-        for(Firestation firestation:firestations) {
+        for (Firestation firestation : firestations) {
 
             if (fnbr.equals(firestation.getStation())) {
 
@@ -88,20 +92,44 @@ public class PersonService {
         }
 
 
-       for(int i = 0; i<fires.size();i++){
-           for(Person person:persons){
-           if(person.getAddress().equals(fires.get(i))){
+        for (int i = 0; i < fires.size(); i++) {
+            for (Person person : persons) {
+                if (person.getAddress().equals(fires.get(i))) {
 
-                       phones.add(person.getPhone());
-                   }
-               }
+                    phones.add(person.getPhone());
+                }
+            }
         }
         return phones;
     }
 
+//retourner les info d'une personne avc param first- et lastname
+
+    public List<String> personInfo(String firstName, String lastName) {
+
+        List<Person> persons = personRepository.findAllPersons();
+        List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
+       List<InfoPersonDTO> infoPersonDTOs = new ArrayList<>();
+
+        for(Person person:persons){
+
+            if((person.getFirstName().equals(firstName)) && (person.getLastName().equals(lastName))){
+
+                for(InfoPersonDTO infoPersonDTO:infoPersonDTOs){
+
+                    infoPersonDTO.setName(person.getLastName());
+                    infoPersonDTO.setFirstName(person.getFirstName());
+                    infoPersonDTO.setAdress(person.getAddress());
+                    infoPersonDTO.setMail(person.getEmail());
 
 
+                }
+            }
+        }
 
+
+        return null;
+    }
 
 
 }

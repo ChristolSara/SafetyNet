@@ -52,6 +52,11 @@ public class PersonController {
     }
 
 
+    @GetMapping(value="personInfo/firstName={firstName}/lastName={lastName}")
+    public List<String>personInfo(@PathVariable String firstName,@PathVariable String lastName){
+        return personService.personInfo(firstName,lastName);
+    }
+
 
 
 }
