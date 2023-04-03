@@ -1,6 +1,6 @@
 package com.SafetyNet.service;
 
-import com.SafetyNet.contoller.DTO.InfoPersonDTO;
+import com.SafetyNet.DTO.InfoPersonDTO;
 import com.SafetyNet.model.Firestation;
 import com.SafetyNet.model.MedicalRecord;
 import com.SafetyNet.model.Person;
@@ -10,8 +10,16 @@ import com.SafetyNet.repository.MedicalRecordsRepository;
 import com.SafetyNet.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
 
 @Service
 public class PersonService {
@@ -105,31 +113,55 @@ public class PersonService {
 
 //retourner les info d'une personne avc param first- et lastname
 
-    public List<InfoPersonDTO> personInfo(String firstName, String lastName) {
+    public List<InfoPersonDTO> personInfo(String firstName, String lastName) throws ParseException {
 
         List<Person> persons = personRepository.findAllPersons();
         List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
         List<InfoPersonDTO> infoPersonDTOs = new ArrayList<InfoPersonDTO>();
 
-        for(Person person:persons){
+        for (Person person : persons) {
 
-            if((person.getFirstName().equals(firstName)) && (person.getLastName().equals(lastName))){
+            if ((person.getFirstName().equals(firstName)) && (person.getLastName().equals(lastName))) {
 
-                for(InfoPersonDTO infoPersonDTO:infoPersonDTOs){
+                InfoPersonDTO infoPersonDTO = new InfoPersonDTO();
 
-                    infoPersonDTO.setName(person.getLastName());
-                    infoPersonDTO.setFirstName(person.getFirstName());
-                    infoPersonDTO.setAdress(person.getAddress());
-                    infoPersonDTO.setMail(person.getEmail());
+                infoPersonDTO.setFirstName(person.getFirstName());
+                infoPersonDTO.setlastName(person.getLastName());
+                infoPersonDTO.setAdress(person.getAddress());
+                infoPersonDTO.setMail(person.getEmail());
 
 
+                for (MedicalRecord medicalRecord : medicalRecords) {
+                    if ((person.getFirstName().equals(medicalRecord.getFirstName())) && (person.getLastName().equals(medicalRecord.getLastName()))) {
+
+                        infoPersonDTO.setAge(medicalRecord.getBirthdate());
+                        infoPersonDTO.setAllergies(List.of(medicalRecord.getAllergies()));
+                        infoPersonDTO.setMedications(medicalRecord.getMedications());
+                        infoPersonDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
+
+                        infoPersonDTOs.add(infoPersonDTO);
+                    }
                 }
+
             }
+
         }
-
-
         return infoPersonDTOs;
     }
 
+
+
+
+    public Integer computeAge(String age) throws ParseException {
+
+        DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
+        formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        LocalDate today = LocalDate.now();
+        LocalDate birthday = LocalDate.parse(age, formatter);
+
+
+        Period p = Period.between(birthday, today);
+        return p.getYears();
+    }
 
 }

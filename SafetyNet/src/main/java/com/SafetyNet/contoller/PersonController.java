@@ -1,10 +1,12 @@
 package com.SafetyNet.contoller;
 
-import com.SafetyNet.contoller.DTO.InfoPersonDTO;
+import com.SafetyNet.DTO.InfoPersonDTO;
+import com.SafetyNet.DTO.infoHabitantDTO;
 import com.SafetyNet.model.Person;
 import com.SafetyNet.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -54,8 +56,14 @@ public class PersonController {
 
 
     @GetMapping(value="personInfo/firstName={firstName}/lastName={lastName}")
-    public List<InfoPersonDTO>personInfo(@PathVariable String firstName, @PathVariable String lastName){
+    public List<InfoPersonDTO>personInfo(@PathVariable String firstName,@PathVariable String lastName) throws ParseException {
         return personService.personInfo(firstName,lastName);
+    }
+
+
+    @GetMapping(value="fire/adress={adress}")
+    public List<infoHabitantDTO> infoHabitant(@PathVariable String adss){
+        return personService.infoHabitant(adss);
     }
 
 

@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="Début DTO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/DTO/InfoPersonDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/InfoPersonDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/resources/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/resources/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +167,16 @@
           <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/SafetyNetApplication.java</url>
           <line>10</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>163</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/DataHandler.java</url>

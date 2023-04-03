@@ -1,29 +1,31 @@
-package com.SafetyNet.contoller.DTO;
+package com.SafetyNet.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
 import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class InfoPersonDTO {
-    private String name;
+
     private String firstName;
+    private String lastName;
     private String adress;
     private String mail ;
-    private Integer age;
+    private String age;
 
-    private List<String> médicaments;
-    private List<String>  allergies;
+    private String[] medications;
+    private String[] allergies;
 
-    public String getName() {
-        return name;
+    public String getlastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setlastName(String name) {
+        this.lastName = name;
     }
 
     public String getFirstName() {
@@ -50,27 +52,27 @@ public class InfoPersonDTO {
         this.mail = mail;
     }
 
-    public Integer getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
-    public List<String> getMédicaments() {
-        return médicaments;
+    public String[] getMedications() {
+        return medications;
     }
 
-    public void setMédicaments(List<String> médicaments) {
-        this.médicaments = médicaments;
+    public void setMedications(String[] medications) {
+        this.medications = medications;
     }
 
     public List<String> getAllergies() {
-        return allergies;
+        return List.of(allergies);
     }
 
     public void setAllergies(List<String> allergies) {
-        this.allergies = allergies;
+        this.allergies = allergies.toArray(new String[0]);
     }
 }
