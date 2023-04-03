@@ -1,7 +1,7 @@
 package com.SafetyNet.contoller;
 
 import com.SafetyNet.DTO.InfoPersonDTO;
-import com.SafetyNet.DTO.infoHabitantDTO;
+import com.SafetyNet.DTO.InfoHabitantDTO;
 import com.SafetyNet.model.Person;
 import com.SafetyNet.service.PersonService;
 import org.springframework.web.bind.annotation.*;
@@ -61,8 +61,8 @@ public class PersonController {
     }
 
 
-    @GetMapping(value="fire/adress={adress}")
-    public List<infoHabitantDTO> infoHabitant(@PathVariable String adss){
+    @GetMapping(value="fire/adress={adss}")
+    public List<InfoHabitantDTO> infoHabitant(@PathVariable String adss) throws ParseException {
         return personService.infoHabitant(adss);
     }
 

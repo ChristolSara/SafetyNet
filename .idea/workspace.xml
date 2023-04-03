@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="Début DTO">
+    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="function age + requette last name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/DTO/InfoPersonDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/InfoPersonDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/infoHabitantDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/InfoHabitantDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/resources/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/resources/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +55,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.SafetyNet.DTO" />
       <recent name="com.SafetyNet.Config" />
       <recent name="com.SafetyNet.service" />
       <recent name="com.SafetyNet.model" />
@@ -148,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680268617242</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="function age + requette last name">
+      <created>1680526732042</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680526732042</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -158,7 +165,8 @@
     <MESSAGE value="4 objectmapper" />
     <MESSAGE value="chargement de data et réalisation des requettes email-city et phoneAlert" />
     <MESSAGE value="Début DTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début DTO" />
+    <MESSAGE value="function age + requette last name" />
+    <option name="LAST_COMMIT_MESSAGE" value="function age + requette last name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -170,13 +178,63 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
-          <line>162</line>
+          <line>160</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
-          <line>163</line>
+          <line>161</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>178</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>182</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>184</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>185</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>186</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/DataHandler.java</url>

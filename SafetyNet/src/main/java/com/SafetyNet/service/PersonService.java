@@ -1,6 +1,7 @@
 package com.SafetyNet.service;
 
 import com.SafetyNet.DTO.InfoPersonDTO;
+import com.SafetyNet.DTO.InfoHabitantDTO;
 import com.SafetyNet.model.Firestation;
 import com.SafetyNet.model.MedicalRecord;
 import com.SafetyNet.model.Person;
@@ -11,14 +12,11 @@ import com.SafetyNet.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 
 @Service
@@ -150,7 +148,7 @@ public class PersonService {
     }
 
 
-
+//fonction qui permet de compter l'age a partir de date de naissance
 
     public Integer computeAge(String age) throws ParseException {
 
@@ -164,4 +162,43 @@ public class PersonService {
         return p.getYears();
     }
 
+    //function qui rend le informations de habitant apartir de l'adress saisie
+    public List<InfoHabitantDTO> infoHabitant(String adss) throws ParseException {
+        List<Person> persons = personRepository.findAllPersons();
+        List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
+        List<Firestation> firestations = fireStationRepository.findAllFireStations();
+
+        List<InfoHabitantDTO> infoHabitantDTOS = new ArrayList<InfoHabitantDTO>();
+
+        for (Person person : persons) {
+            if (person.getAddress().equals(adss)) {
+                InfoHabitantDTO infoHabitantDTO = new InfoHabitantDTO();
+
+                infoHabitantDTO.setLastName(person.getLastName());
+                infoHabitantDTO.setFirstName(person.getFirstName());
+                infoHabitantDTO.setPhone(person.getPhone());
+                infoHabitantDTO.setAdress(person.getAddress());
+                for (Firestation firestation : firestations) {
+                    if (firestation.getAddress().equals(person.getAddress())) {
+                        infoHabitantDTO.setStation(firestation.getStation());
+                        for (MedicalRecord medicalRecord : medicalRecords) {
+                            if (person.getFirstName().equals(medicalRecord.getFirstName())) {
+                                infoHabitantDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
+                                infoHabitantDTO.setAllergies(medicalRecord.getAllergies());
+                                infoHabitantDTO.setMedications(medicalRecord.getMedications());
+
+                            }
+
+
+                        }
+                    }
+                }
+                infoHabitantDTOS.add(infoHabitantDTO);
+            }
+
+        }
+
+
+        return infoHabitantDTOS;
+    }
 }
