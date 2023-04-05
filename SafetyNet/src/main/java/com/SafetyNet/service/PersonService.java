@@ -1,5 +1,6 @@
 package com.SafetyNet.service;
 
+import com.SafetyNet.DTO.EnfantDTO;
 import com.SafetyNet.DTO.InfoHabitantStationDTO;
 import com.SafetyNet.DTO.InfoPersonDTO;
 import com.SafetyNet.DTO.InfoHabitantDTO;
@@ -258,5 +259,48 @@ public class PersonService {
         infoHabitantStationDTO.setMineur(" le nombre des personnes mineur est "+ decompteMineur);
 
         return infoHabitantStationDTO;
+    }
+
+    public List<EnfantDTO> enfantList(String adrs) throws ParseException {
+
+        List<Person> persons = personRepository.findAllPersons();
+        List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
+        List<Firestation> firestations = fireStationRepository.findAllFireStations();
+
+        List<EnfantDTO> enfantDTOs = new ArrayList<EnfantDTO>();
+        List<Person> personNibers=new ArrayList<Person>();
+
+        for (Person person:persons) {
+            if (person.getAddress().equals(adrs)) {
+
+                    personNibers.add(person);
+
+
+                person.getFirstName();
+                person.getLastName();
+
+
+                for (MedicalRecord medicalRecord : medicalRecords) {
+
+                    if (person.getFirstName().equals(medicalRecord.getFirstName()) && (computeAge(medicalRecord.getBirthdate()) < 18)) {
+
+                        EnfantDTO enfantDTO = new EnfantDTO();
+                        enfantDTO.setAdress(person.getAddress());
+                        enfantDTO.setFirstName(person.getFirstName());
+                        enfantDTO.setLastName(person.getLastName());
+                        enfantDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
+                        enfantDTO.setPersonList(personNibers);
+                        enfantDTOs.add(enfantDTO);
+                    }
+
+                }
+
+
+            }
+
+        }
+
+
+        return enfantDTOs;
     }
 }

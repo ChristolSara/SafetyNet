@@ -1,5 +1,6 @@
 package com.SafetyNet.contoller;
 
+import com.SafetyNet.DTO.EnfantDTO;
 import com.SafetyNet.DTO.InfoHabitantStationDTO;
 import com.SafetyNet.DTO.InfoPersonDTO;
 import com.SafetyNet.DTO.InfoHabitantDTO;
@@ -69,6 +70,10 @@ public class PersonController {
     @GetMapping(value="fire/stationNumber={station_number}")
     public InfoHabitantStationDTO infoHabitantStation(@PathVariable String station_number) throws ParseException {
         return personService.infoHabitantStation(station_number);
+    }
+    @GetMapping(value="childAlert/adress={adrs}")
+    public List<EnfantDTO> enfantList(@PathVariable String adrs) throws ParseException {
+        return personService.enfantList(adrs);
     }
 
 
