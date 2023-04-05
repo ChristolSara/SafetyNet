@@ -1,9 +1,6 @@
 package com.SafetyNet.contoller;
 
-import com.SafetyNet.DTO.EnfantDTO;
-import com.SafetyNet.DTO.InfoHabitantStationDTO;
-import com.SafetyNet.DTO.InfoPersonDTO;
-import com.SafetyNet.DTO.InfoHabitantDTO;
+import com.SafetyNet.DTO.*;
 import com.SafetyNet.model.Person;
 import com.SafetyNet.service.PersonService;
 import org.springframework.web.bind.annotation.*;
@@ -71,11 +68,19 @@ public class PersonController {
     public InfoHabitantStationDTO infoHabitantStation(@PathVariable String station_number) throws ParseException {
         return personService.infoHabitantStation(station_number);
     }
+
+
+
+    //cette method retourne des enfants et leur info par rapport à leur adress et etourne une liste des personne de meme foyer
     @GetMapping(value="childAlert/adress={adrs}")
     public List<EnfantDTO> enfantList(@PathVariable String adrs) throws ParseException {
         return personService.enfantList(adrs);
     }
 
+    @GetMapping(value="flood/stations={stationNumber}")
+    public List<FoyerDTO> listFoyer(@PathVariable String stationNumber) throws ParseException{
+        return personService.listFoyer(stationNumber);
+    }
 
 
 

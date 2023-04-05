@@ -1,9 +1,6 @@
 package com.SafetyNet.service;
 
-import com.SafetyNet.DTO.EnfantDTO;
-import com.SafetyNet.DTO.InfoHabitantStationDTO;
-import com.SafetyNet.DTO.InfoPersonDTO;
-import com.SafetyNet.DTO.InfoHabitantDTO;
+import com.SafetyNet.DTO.*;
 
 import com.SafetyNet.model.Firestation;
 import com.SafetyNet.model.MedicalRecord;
@@ -260,7 +257,7 @@ public class PersonService {
 
         return infoHabitantStationDTO;
     }
-
+//cette method retourne des enfants et leur info par rapport à leur adress et etourne une liste des personne de meme foyer
     public List<EnfantDTO> enfantList(String adrs) throws ParseException {
 
         List<Person> persons = personRepository.findAllPersons();
@@ -302,5 +299,33 @@ public class PersonService {
 
 
         return enfantDTOs;
+    }
+
+    public List<FoyerDTO> listFoyer(String stationNumber) {
+        List<Person> persons = personRepository.findAllPersons();
+        List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
+        List<Firestation> firestations = fireStationRepository.findAllFireStations();
+        List<Person> personFoyer=new ArrayList<Person>();
+        List<FoyerDTO> listFoyers = new ArrayList<FoyerDTO>();
+
+
+
+        for (Firestation firestation:firestations){
+            if(firestation.getStation().equals(stationNumber)){
+
+                for (Person person:persons){
+                    if (person.getAddress().equals(firestation.getAddress())) {
+
+                        FoyerDTO foyerDTO=new FoyerDTO();
+                        foyerDTO.setAdress(person.getAddress());
+                        foyerDTO.setStationNumber(firestation.getStation());
+                        foyerDTO.setPersonFoyer(personFoyer);
+                        listFoyers.add(foyerDTO);
+                    }
+                }
+            }
+        }
+
+        return  listFoyers;
     }
 }
