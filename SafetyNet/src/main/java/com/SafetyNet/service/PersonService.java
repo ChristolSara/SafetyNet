@@ -1,7 +1,9 @@
 package com.SafetyNet.service;
 
+import com.SafetyNet.DTO.InfoHabitantStationDTO;
 import com.SafetyNet.DTO.InfoPersonDTO;
 import com.SafetyNet.DTO.InfoHabitantDTO;
+
 import com.SafetyNet.model.Firestation;
 import com.SafetyNet.model.MedicalRecord;
 import com.SafetyNet.model.Person;
@@ -24,6 +26,7 @@ public class PersonService {
     private final PersonRepository personRepository;
     private final MedicalRecordsRepository medicalRecordsRepository;
     private final FireStationRepository fireStationRepository;
+    private InfoHabitantStationDTO infoHabitant;
 
     public PersonService(PersonRepository personRepository, MedicalRecordsRepository medicalRecordsRepository, FireStationRepository fireStationRepository) {
         this.personRepository = personRepository;
@@ -200,5 +203,60 @@ public class PersonService {
 
 
         return infoHabitantDTOS;
+    }
+
+    //cette method retourne les info dhabitant pa rapport à  leur stationfire
+    public InfoHabitantStationDTO infoHabitantStation(String station_number) throws ParseException {
+        List<Person> persons = personRepository.findAllPersons();
+        List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
+        List<Firestation> firestations = fireStationRepository.findAllFireStations();
+
+        List<InfoHabitantDTO> habitantDTOList = new ArrayList<InfoHabitantDTO>();
+
+        InfoHabitantStationDTO infoHabitantStationDTO = new InfoHabitantStationDTO();
+
+        int decompteMajeur =0;
+        int decompteMineur =0;
+
+        for (Firestation firestation : firestations) {
+            if (firestation.getStation().equals(station_number)) {
+                InfoHabitantDTO infoHabitant = new InfoHabitantDTO();
+
+                infoHabitant.setAdress(firestation.getAddress());
+                infoHabitant.setStation(firestation.getStation());
+
+                for (Person person : persons) {
+                    if (person.getAddress().equals(firestation.getAddress())) {
+                        infoHabitant.setLastName(person.getLastName());
+                        infoHabitant.setFirstName(person.getFirstName());
+                        infoHabitant.setPhone(person.getPhone());
+                        for (MedicalRecord medicalRecord : medicalRecords) {
+                            if (medicalRecord.getLastName().equals(infoHabitant.getLastName())) {
+                                infoHabitant.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
+
+                            }
+                        }
+                    }
+
+                }
+                if((Integer.valueOf(infoHabitant.getAge()))> 18){
+                    decompteMajeur = decompteMajeur +1;
+
+                }else{
+                    decompteMineur = decompteMineur+1;
+                }
+
+
+                habitantDTOList.add(infoHabitant);
+
+            }
+
+
+        }
+        infoHabitantStationDTO.setHabitantDTOList(habitantDTOList);
+        infoHabitantStationDTO.setMajeur(" le nombre des personnes majeur est "+decompteMajeur);
+        infoHabitantStationDTO.setMineur(" le nombre des personnes mineur est "+ decompteMineur);
+
+        return infoHabitantStationDTO;
     }
 }

@@ -1,5 +1,6 @@
 package com.SafetyNet.contoller;
 
+import com.SafetyNet.DTO.InfoHabitantStationDTO;
 import com.SafetyNet.DTO.InfoPersonDTO;
 import com.SafetyNet.DTO.InfoHabitantDTO;
 import com.SafetyNet.model.Person;
@@ -59,12 +60,20 @@ public class PersonController {
     public List<InfoPersonDTO>personInfo(@PathVariable String firstName,@PathVariable String lastName) throws ParseException {
         return personService.personInfo(firstName,lastName);
     }
-
-
-    @GetMapping(value="fire/adress={adss}")
+    @GetMapping(value="firestation/adress={adss}")
     public List<InfoHabitantDTO> infoHabitant(@PathVariable String adss) throws ParseException {
         return personService.infoHabitant(adss);
     }
+
+//cette method retourne info dhabitant par rapport à son station num
+    @GetMapping(value="fire/stationNumber={station_number}")
+    public InfoHabitantStationDTO infoHabitantStation(@PathVariable String station_number) throws ParseException {
+        return personService.infoHabitantStation(station_number);
+    }
+
+
+
+
 
 
 
