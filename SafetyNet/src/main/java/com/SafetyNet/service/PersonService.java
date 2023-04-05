@@ -301,11 +301,11 @@ public class PersonService {
         return enfantDTOs;
     }
 
-    public List<FoyerDTO> listFoyer(String stationNumber) {
+    public List<FoyerDTO> listFoyer(String stationNumber) throws ParseException {
         List<Person> persons = personRepository.findAllPersons();
         List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
         List<Firestation> firestations = fireStationRepository.findAllFireStations();
-        List<Person> personFoyer=new ArrayList<Person>();
+        List<InfoHabitantDTO> personFoyer= new ArrayList<InfoHabitantDTO>();
         List<FoyerDTO> listFoyers = new ArrayList<FoyerDTO>();
 
 
@@ -315,6 +315,19 @@ public class PersonService {
 
                 for (Person person:persons){
                     if (person.getAddress().equals(firestation.getAddress())) {
+
+                        InfoHabitantDTO infoHabitantDTO=new InfoHabitantDTO();
+
+                        infoHabitantDTO.setLastName(person.getLastName());
+                        infoHabitantDTO.setFirstName(person.getFirstName());
+                        infoHabitantDTO.setPhone(person.getPhone());
+                        for (MedicalRecord medicalRecord : medicalRecords) {
+                            if (medicalRecord.getLastName().equals(infoHabitantDTO.getLastName())) {
+                                infoHabitantDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
+
+                            }
+                        }
+                        personFoyer.add(infoHabitantDTO);
 
                         FoyerDTO foyerDTO=new FoyerDTO();
                         foyerDTO.setAdress(person.getAddress());
