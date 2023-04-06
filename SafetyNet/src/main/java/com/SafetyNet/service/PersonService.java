@@ -321,18 +321,20 @@ public class PersonService {
                         infoHabitantDTO.setLastName(person.getLastName());
                         infoHabitantDTO.setFirstName(person.getFirstName());
                         infoHabitantDTO.setPhone(person.getPhone());
+                        infoHabitantDTO.setAdress(person.getAddress());
+                        infoHabitantDTO.setStation(firestation.getStation());
                         for (MedicalRecord medicalRecord : medicalRecords) {
                             if (medicalRecord.getLastName().equals(infoHabitantDTO.getLastName())) {
                                 infoHabitantDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
-
+                                infoHabitantDTO.setMedications(medicalRecord.getMedications());
+                                infoHabitantDTO.setAllergies(medicalRecord.getAllergies());
+                                personFoyer.add(infoHabitantDTO);
                             }
                         }
-                        personFoyer.add(infoHabitantDTO);
-
                         FoyerDTO foyerDTO=new FoyerDTO();
                         foyerDTO.setAdress(person.getAddress());
                         foyerDTO.setStationNumber(firestation.getStation());
-                        foyerDTO.setPersonFoyer(personFoyer);
+                        foyerDTO.setInfoHabitant(personFoyer);
                         listFoyers.add(foyerDTO);
                     }
                 }

@@ -12,7 +12,7 @@ import java.util.List;
 public class FoyerDTO {
     private String stationNumber;
     private String adress;
-    private List<InfoHabitantDTO> infoHabitantDTOS;
+    private List<InfoHabitantDTO> infoHabitant;
 
     public String getStationNumber() {
         return stationNumber;
@@ -30,14 +30,11 @@ public class FoyerDTO {
         this.adress = adress;
     }
 
-    public List<InfoHabitantDTO> getInfoHabitantDTOS() {
-        return infoHabitantDTOS;
+    public List<InfoHabitantDTO> getInfoHabitant() {
+        return infoHabitant;
     }
 
-    public void setInfoHabitantDTOS(List<InfoHabitantDTO> infoHabitantDTOS) {
-        this.infoHabitantDTOS = infoHabitantDTOS;
-    }
-
-    public void setPersonFoyer(List<InfoHabitantDTO> personFoyer) {
+    public void setInfoHabitant(List<InfoHabitantDTO> infoHabitant) {
+        this.infoHabitant = infoHabitant;
     }
 }

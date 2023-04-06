@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="traitement de requette flood/station">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/FoyerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/FoyerDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" afterDir="false" />
     </list>
