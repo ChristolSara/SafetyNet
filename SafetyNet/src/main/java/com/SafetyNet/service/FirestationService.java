@@ -37,7 +37,16 @@ public class FirestationService {
         return null ;
     }
 
+    public Firestation save(Firestation firesation) {
+        return firesation;
+    }
 
+    public Firestation update(Firestation firestation) {
+        return firestation;
+    }
+
+    public void delete(Firestation firestation) {
+    }
 
 
 //    public Firestation save(Firestation firesation) {

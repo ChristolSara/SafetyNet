@@ -17,74 +17,78 @@ public class PersonController {
     }
 
 
+    //traitement des CRUD
+    @PostMapping(value = "/person")
+    public Person ajouterPerson(@RequestBody Person person) {
+        return person;
+    }
 
-//    @PostMapping(value="/person")
-//    public Person ajouterPerson(@RequestBody Person person){
-//       return personService.save(person);
-//    }
-//
-//    @PutMapping(value="/person")
-//    public Person mettreAjourPerson(Person person){
-//        return personService.update(person);
-//    }
-//    @DeleteMapping(value = "/person")
-//    public void supprimerPerson(Person person){
-//        personService.delete(person);
-//    }
+    //
+    @PutMapping(value = "/person")
+    public Person mettreAjourPerson(Person person) {
+        return personService.update(person);
+    }
+
+    @DeleteMapping(value = "/person")
+    public void supprimerPerson(Person person) {
+        personService.delete(person);
 
 
-    @GetMapping(value="/allPersons")
-    public List<Person> findAllPersons(){
+    }
+
+    @GetMapping(value = "/allPersons")
+    public List<Person> findAllPersons() {
 
         return personService.fibdAllPersons();
-        }
-     @GetMapping(value="/allMails")
-        public List <String> findAllMail(){
+    }
+
+    @GetMapping(value = "/allMails")
+    public List<String> findAllMail() {
 
         return personService.findAllMails();
-        }
-    @GetMapping(value="/allMails/{city}")
-    public List <String> findAllMailcity(@PathVariable String city){
-
-        return personService.findAllMailscity(city);
     }
-    @GetMapping(value="phoneAlert/firestation={fnbr}")
-    public List<String>phoneAlertNumber(@PathVariable String fnbr){
-        return personService.phoneAlert(fnbr);
-    }
+//traitement des requettes  complexe
 
 
-    @GetMapping(value="personInfo/firstName={firstName}/lastName={lastName}")
-    public List<InfoPersonDTO>personInfo(@PathVariable String firstName,@PathVariable String lastName) throws ParseException {
-        return personService.personInfo(firstName,lastName);
-    }
-    @GetMapping(value="firestation/adress={adss}")
-    public List<InfoHabitantDTO> infoHabitant(@PathVariable String adss) throws ParseException {
-        return personService.infoHabitant(adss);
-    }
-
-//cette method retourne info dhabitant par rapport à son station num
-    @GetMapping(value="fire/stationNumber={station_number}")
+    //cette method retourne info dhabitant par rapport à son station num
+    @GetMapping(value = "firestation/stationNumber={station_number}")
     public InfoHabitantStationDTO infoHabitantStation(@PathVariable String station_number) throws ParseException {
         return personService.infoHabitantStation(station_number);
     }
 
-
-
     //cette method retourne des enfants et leur info par rapport à leur adress et etourne une liste des personne de meme foyer
-    @GetMapping(value="childAlert/adress={adrs}")
+    @GetMapping(value = "childAlert/adress={adrs}")
     public List<EnfantDTO> enfantList(@PathVariable String adrs) throws ParseException {
         return personService.enfantList(adrs);
     }
 
-    @GetMapping(value="flood/stations={stationNumber}")
-    public List<FoyerDTO> listFoyer(@PathVariable String stationNumber) throws ParseException{
-        return personService.listFoyer(stationNumber);
+
+    @GetMapping(value = "phoneAlert/firestation={fnbr}")
+    public List<String> phoneAlertNumber(@PathVariable String fnbr) {
+        return personService.phoneAlert(fnbr);
+    }
+
+    @GetMapping(value = "fire/adress={adss}")
+    public List<InfoHabitantDTO> infoHabitant(@PathVariable String adss) throws ParseException {
+        return personService.infoHabitant(adss);
     }
 
 
+    @GetMapping(value = "flood/stations={stationNumber}")
+    public List<FoyerDTO> listFoyer(@PathVariable String stationNumber) throws ParseException {
+        return personService.listFoyer(stationNumber);
+    }
 
+    @GetMapping(value = "personInfo/firstName={firstName}/lastName={lastName}")
+    public List<InfoPersonDTO> personInfo(@PathVariable String firstName, @PathVariable String lastName) throws ParseException {
+        return personService.personInfo(firstName, lastName);
+    }
 
+    @GetMapping(value = "/allMails/{city}")
+    public List<Person> findAllMailcity(@PathVariable String city) {
+
+        return personService.findAllMailscity(city);
+    }
 
 
 }

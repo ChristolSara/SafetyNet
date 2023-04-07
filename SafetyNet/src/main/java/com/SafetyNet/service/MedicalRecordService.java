@@ -21,20 +21,21 @@ public class MedicalRecordService {
         this.medicalRecordsRepository = medicalRecordsRepository;
         this.fireStationRepository = fireStationRepository;
     }
-    public List<MedicalRecord> findAllMedicalRecords(){
+    //traitement des CRUD
+    public List<MedicalRecord> findAllMedicalRecords() {
 
         return medicalRecordsRepository.findAllMedicalRecords();
     }
 
+    public MedicalRecord save(MedicalRecord medicalRecord) {
+        return medicalRecord;
+    }
 
-//    public MedicalRecord save(MedicalRecord medicalRecord) {
-//        return medicalRecord;
-//    }
-//
-//    public MedicalRecord update(MedicalRecord medicalRecord) {
-//        return medicalRecord;
-//    }
-//
-//    public void delete(MedicalRecord medicalRecord) {
-//    }
+    public MedicalRecord update(MedicalRecord medicalRecord) {
+        return medicalRecord;
+    }
+
+    public void delete(MedicalRecord medicalRecord) {
+    }
+
 }

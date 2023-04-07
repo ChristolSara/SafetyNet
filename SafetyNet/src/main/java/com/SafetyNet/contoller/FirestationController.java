@@ -13,22 +13,22 @@ public class FirestationController {
     public FirestationController(FirestationService firestationService) {
         this.firestationService = firestationService;
     }
+//traitement des crud
 
+    @PostMapping(value="/firestation")
+    public Firestation ajouterFirestation(@RequestBody Firestation firesation){
+        return firestationService.save(firesation);
+    }
 
-//    @PostMapping(value="/firestation")
-//    public Firestation ajouterFirestation(@RequestBody Firestation firesation){
-//        return firestationService.save(firesation);
-//    }
-//
-//    @PutMapping(value="/firestation")
-//    public Firestation mettreAjourFirestation(Firestation firestation){
-//        return firestationService.update(firestation);
-//    }
-//    @DeleteMapping(value = "/firestation")
-//    public void supprimerFirestation(Firestation firestation){
-//        firestationService.delete(firestation);
-//
-//    }
+    @PutMapping(value="/firestation")
+    public Firestation mettreAjourFirestation(Firestation firestation){
+        return firestationService.update(firestation);
+    }
+    @DeleteMapping(value = "/firestation")
+    public void supprimerFirestation(Firestation firestation){
+        firestationService.delete(firestation);
+
+    }
 
 
 
