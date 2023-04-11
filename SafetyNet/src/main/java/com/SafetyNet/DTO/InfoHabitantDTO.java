@@ -50,7 +50,7 @@ public class InfoHabitantDTO {
         this.age = age;
     }
 
-    public String getAdress() {
+    public String getAdress(String address) {
         return adress;
     }
 

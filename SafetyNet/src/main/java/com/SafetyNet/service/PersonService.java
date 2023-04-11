@@ -37,17 +37,30 @@ public class PersonService {
 
  ///   //traitement des crud
 
-   public Person save(Person person) throws IOException {
-        DataHandler dataHandler = new DataHandler();
-        dataHandler.save();
-        return person;
+   public void addPerson(Person person)  {
+      personRepository.addPerson(person);
+
     }
 /////////////////
-    public Person update(Person person) {
-        return (person);
+public void update( Person person) {
+        List<Person> persons = personRepository.findAllPersons();
+    for (Person person1 : persons) {
+        if (person1.getFirstName().equals(person.getFirstName()) && person1.getLastName().equals(person.getLastName())) {
+            person1.setFirstName(person.getFirstName());
+            person1.setLastName(person.getLastName());
+            person1.setAddress(person.getAddress());
+            person1.setPhone(person.getPhone());
+            person1.setEmail(person.getEmail());
+            person1.setCity(person.getCity());
+
+        }
+
     }
+    personRepository.update(persons);
+}
 ///////////////////
     public void delete(Person person) {
+        personRepository.deletePerson(person);
        }
 //////////////////
 
@@ -64,11 +77,37 @@ public class PersonService {
     }
 
     //chercher les emails par rapport au city en utilisant les stream
-    public List<Person> findAllMailscity(String city) {
+    public List<String> findAllMailscity(String city) {
 
         List<Person> persons = personRepository.findAllPersons();
-        List<Person> mailsCity = persons.stream().filter(person -> person.getEmail().equals(city)).collect(Collectors.toList());
+        List<String> mailsCity = new ArrayList<>();
+        for (Person person : persons) {
+            if (person.getCity().equals(city)) {
+                mailsCity.add(person.getEmail());
+            }
+        }
         return mailsCity;
+    }
+
+    //trouver un person avc son nom et  prenom
+    public Person findPerson(String fnm,String lnm) {
+
+        List<Person> persons = personRepository.findAllPersons();
+
+        Person person1 = new Person();
+
+        for (Person person : persons) {
+            if (person.getFirstName().equals(fnm) && person.getLastName().equals(lnm)) {
+
+                person1.setLastName(person.getLastName());
+                person1.setFirstName(person.getFirstName());
+                person1.setAddress(person.getAddress());
+                person1.setCity(person.getCity());
+                person1.setEmail(person.getEmail());
+                person1.setPhone(person.getPhone());
+            }
+
+        } return person1;
     }
 
     //retourne une list des n telephone des résidents qui apartients a la mm caserne
@@ -90,7 +129,8 @@ public class PersonService {
 
                     phones.add(person.getPhone());
                 }}}
-        return phones;}
+        return phones;
+        }
 
 //retourner les info d'une personne avc param first- et lastname
     public List<InfoPersonDTO> personInfo(String firstName, String lastName) throws ParseException {

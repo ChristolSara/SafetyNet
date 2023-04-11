@@ -32,20 +32,34 @@ public class FirestationService {
     public List<Firestation> findAllFireStationsNumber(String Nbr){
 
       List<Firestation> firestations=  fireStationRepository.findAllFireStations();
-
-
         return null ;
     }
 
-    public Firestation save(Firestation firesation) {
-        return firesation;
+    public void save(Firestation firesation) {
+        fireStationRepository.addFireStation(firesation);
+
     }
 
-    public Firestation update(Firestation firestation) {
-        return firestation;
+    public void update(Firestation firestation) {
+        List<Firestation> firestations = fireStationRepository.findAllFireStations();
+        for (Firestation firestation1:firestations) {
+            if (firestation1.getAddress().equals(firestation.getAddress())) {
+                firestation1.setAddress(firestation.getAddress());
+                firestation1.setStation(firestation.getStation());
+
+            }
+
+        }
+        fireStationRepository.update(firestations);
+
+
     }
 
     public void delete(Firestation firestation) {
+        fireStationRepository.deleteFirestations(firestation);
+    }
+    public List<Firestation> AllFireStations(){
+        return fireStationRepository.findAllFireStations();
     }
 
 

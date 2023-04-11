@@ -19,16 +19,16 @@ public class MedicalRecordController {
         return medicalRecordService.findAllMedicalRecords();
     }
     @PostMapping(value="/medicalRecord")
-    public MedicalRecord ajouterMedicalRecord(MedicalRecord medicalRecord){
-        return medicalRecordService.save(medicalRecord);
+    public void addMedicalRecord(@RequestBody MedicalRecord medicalRecord){
+         medicalRecordService.addMedicalRecord(medicalRecord);
     }
     @PutMapping(value = "/medicalRecord")
-    public MedicalRecord miseAjourMedicalRecord(MedicalRecord medicalRecord){
+    public MedicalRecord miseAjourMedicalRecord(@RequestBody MedicalRecord medicalRecord){
         return medicalRecordService.update(medicalRecord);
     }
 
     @DeleteMapping(value = "/medicalRecord")
-    public void supprimermedicalRecord(MedicalRecord medicalRecord){
+    public void supprimermedicalRecord(@RequestBody MedicalRecord medicalRecord){
         medicalRecordService.delete(medicalRecord);
     }
 

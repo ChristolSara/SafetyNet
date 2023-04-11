@@ -5,12 +5,14 @@ import com.SafetyNet.model.Person;
 import com.SafetyNet.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
 @RestController
 public class PersonController {
     private final PersonService personService;
+
 
     public PersonController(PersonService personService) {
         this.personService = personService;
@@ -19,18 +21,19 @@ public class PersonController {
 
     //traitement des CRUD
     @PostMapping(value = "/person")
-    public Person ajouterPerson(@RequestBody Person person) {
-        return person;
+    public void addPerson(@RequestBody Person person)  {
+
+        personService.addPerson(person);
     }
 
     //
     @PutMapping(value = "/person")
-    public Person mettreAjourPerson(Person person) {
-        return personService.update(person);
+    public void mettreAjourPerson(@RequestBody Person person) {
+        personService.update(person);
     }
 
     @DeleteMapping(value = "/person")
-    public void supprimerPerson(Person person) {
+    public void supprimerPerson(@RequestBody Person person) {
         personService.delete(person);
 
 
@@ -85,7 +88,7 @@ public class PersonController {
     }
 
     @GetMapping(value = "/allMails/{city}")
-    public List<Person> findAllMailcity(@PathVariable String city) {
+    public List<String> findAllMailcity(@PathVariable String city) {
 
         return personService.findAllMailscity(city);
     }

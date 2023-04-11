@@ -27,8 +27,8 @@ public class MedicalRecordService {
         return medicalRecordsRepository.findAllMedicalRecords();
     }
 
-    public MedicalRecord save(MedicalRecord medicalRecord) {
-        return medicalRecord;
+    public void addMedicalRecord(MedicalRecord medicalRecord) {
+        medicalRecordsRepository.addMedicalRecords(medicalRecord);
     }
 
     public MedicalRecord update(MedicalRecord medicalRecord) {
@@ -36,6 +36,7 @@ public class MedicalRecordService {
     }
 
     public void delete(MedicalRecord medicalRecord) {
+        medicalRecordsRepository.deleteMedicalRecords(medicalRecord);
     }
 
 }
