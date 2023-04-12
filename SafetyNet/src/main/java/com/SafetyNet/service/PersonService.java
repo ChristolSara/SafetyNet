@@ -6,13 +6,11 @@ import com.SafetyNet.model.Firestation;
 import com.SafetyNet.model.MedicalRecord;
 import com.SafetyNet.model.Person;
 
-import com.SafetyNet.repository.DataHandler;
 import com.SafetyNet.repository.FireStationRepository;
 import com.SafetyNet.repository.MedicalRecordsRepository;
 import com.SafetyNet.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.Period;
@@ -35,44 +33,49 @@ public class PersonService {
         this.fireStationRepository = fireStationRepository;
     }
 
- ///   //traitement des crud
+    ///   //traitement des crud
 
-   public void addPerson(Person person)  {
-      personRepository.addPerson(person);
+    public void addPerson(Person person) {
+        personRepository.addPerson(person);
 
     }
-/////////////////
-public void update( Person person) {
+
+    /////////////////
+    public void update(Person person) {
         List<Person> persons = personRepository.findAllPersons();
-    for (Person person1 : persons) {
-        if (person1.getFirstName().equals(person.getFirstName()) && person1.getLastName().equals(person.getLastName())) {
-            person1.setFirstName(person.getFirstName());
-            person1.setLastName(person.getLastName());
-            person1.setAddress(person.getAddress());
-            person1.setPhone(person.getPhone());
-            person1.setEmail(person.getEmail());
-            person1.setCity(person.getCity());
+        for (Person person1 : persons) {
+            if (person1.getFirstName().equals(person.getFirstName()) && person1.getLastName().equals(person.getLastName())) {
+                person1.setFirstName(person.getFirstName());
+                person1.setLastName(person.getLastName());
+                person1.setAddress(person.getAddress());
+                person1.setPhone(person.getPhone());
+                person1.setEmail(person.getEmail());
+                person1.setCity(person.getCity());
+
+            }
 
         }
-
+        personRepository.update(persons);
     }
-    personRepository.update(persons);
-}
-///////////////////
+
+    ///////////////////
     public void delete(Person person) {
         personRepository.deletePerson(person);
-       }
+    }
 //////////////////
 
     public List<Person> fibdAllPersons() {
         return personRepository.findAllPersons();
     }
-//traitement des requettes complexe
+
+    //traitement des requettes complexe
     public List<String> findAllMails() {
 
         List<Person> persons = personRepository.findAllPersons();
         List<String> mails = new ArrayList<>();
-        for (Person person : persons) {mails.add(person.getEmail());}
+        for (Person person : persons) {
+            mails.add(person.getEmail());
+        }
         return mails;
     }
 
@@ -90,7 +93,7 @@ public void update( Person person) {
     }
 
     //trouver un person avc son nom et  prenom
-    public Person findPerson(String fnm,String lnm) {
+    public Person findPerson(String fnm, String lnm) {
 
         List<Person> persons = personRepository.findAllPersons();
 
@@ -107,7 +110,8 @@ public void update( Person person) {
                 person1.setPhone(person.getPhone());
             }
 
-        } return person1;
+        }
+        return person1;
     }
 
     //retourne une list des n telephone des résidents qui apartients a la mm caserne
@@ -121,18 +125,21 @@ public void update( Person person) {
         for (Firestation firestation : firestations) {
 
             if (fnbr.equals(firestation.getStation())) {
-                fires.add(firestation.getAddress());}
+                fires.add(firestation.getAddress());
+            }
         }
         for (int i = 0; i < fires.size(); i++) {
             for (Person person : persons) {
                 if (person.getAddress().equals(fires.get(i))) {
 
                     phones.add(person.getPhone());
-                }}}
-        return phones;
+                }
+            }
         }
+        return phones;
+    }
 
-//retourner les info d'une personne avc param first- et lastname
+    //retourner les info d'une personne avc param first- et lastname
     public List<InfoPersonDTO> personInfo(String firstName, String lastName) throws ParseException {
 
         List<Person> persons = personRepository.findAllPersons();
@@ -154,7 +161,10 @@ public void update( Person person) {
                         infoPersonDTO.setMedications(medicalRecord.getMedications());
                         infoPersonDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
                         infoPersonDTOs.add(infoPersonDTO);
-                    }}}}
+                    }
+                }
+            }
+        }
         return infoPersonDTOs;
     }
 //fonction qui permet de compter l'age a partir de date de naissance
@@ -193,9 +203,13 @@ public void update( Person person) {
                                 infoHabitantDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
                                 infoHabitantDTO.setAllergies(medicalRecord.getAllergies());
                                 infoHabitantDTO.setMedications(medicalRecord.getMedications());
-                            }}}}
+                            }
+                        }
+                    }
+                }
                 infoHabitantDTOS.add(infoHabitantDTO);
-            }}
+            }
+        }
         return infoHabitantDTOS;
     }
 
@@ -228,14 +242,18 @@ public void update( Person person) {
                             if (medicalRecord.getLastName().equals(infoHabitant.getLastName())) {
                                 infoHabitant.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
 
-                            }}}}
+                            }
+                        }
+                    }
+                }
                 if ((Integer.valueOf(infoHabitant.getAge())) > 18) {
                     decompteMajeur = decompteMajeur + 1;
 
                 } else {
                     decompteMineur = decompteMineur + 1;
                 }
-                habitantDTOList.add(infoHabitant);}
+                habitantDTOList.add(infoHabitant);
+            }
         }
         infoHabitantStationDTO.setHabitantDTOList(habitantDTOList);
         infoHabitantStationDTO.setMajeur(" le nombre des personnes majeur est " + decompteMajeur);
@@ -269,43 +287,74 @@ public void update( Person person) {
                         enfantDTO.setAdress(person.getAddress());
                         enfantDTO.setPersonList(personNibers);
                         enfantDTOs.add(enfantDTO);
-                    }}}}
+                    }
+                }
+            }
+        }
         return enfantDTOs;
     }
-////////////////////////////
-    public List<FoyerDTO> listFoyer(String stationNumber) throws ParseException {
-        List<Person> persons = personRepository.findAllPersons();
-        List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
-        List<Firestation> firestations = fireStationRepository.findAllFireStations();
+
+    ////////////////////////////
+    public List<FoyerDTO> getListDtoFlood(List<Integer> stations) throws ParseException {
+
+        List<Firestation> firestationList = selectListFirestationByListStationNumbers(stations);
+
         List<InfoHabitantDTO> personFoyer = new ArrayList<InfoHabitantDTO>();
-        List<FoyerDTO> listFoyers = new ArrayList<FoyerDTO>();
+
+        List<FoyerDTO> foyerDTOS = new ArrayList<FoyerDTO>();
+
+        for (Firestation firestation : firestationList) {
+            InfoHabitantDTO infoHabitantDTO = new InfoHabitantDTO();
+            infoHabitantDTO.setAdress(firestation.getAddress());
+
+            List<Person> personList = personRepository.findAllPersons();
+
+            for (Person person : personList) {
+                MedicalRecord medicalRecord = medicalRecordsRepository.selectMedicalRecordByFirstNameAndLastName(person.getFirstName(), person.getLastName());
+                Integer age = computeAge(medicalRecord.getBirthdate());
+                infoHabitantDTO.setLastName(person.getLastName());
+                infoHabitantDTO.setFirstName(person.getFirstName());
+                infoHabitantDTO.setAge(age.toString());
+                infoHabitantDTO.setAllergies(medicalRecord.getAllergies());
+                infoHabitantDTO.setMedications(medicalRecord.getMedications());
 
 
-        for (Firestation firestation : firestations) {
-            if (firestation.getStation().equals(stationNumber)) {
+            }
+            personFoyer.add(infoHabitantDTO);
+            foyerDTOS.add((FoyerDTO) personFoyer);
+        }
+        return foyerDTOS;
+    }
 
-                for (Person person : persons) {
-                    if (person.getAddress().equals(firestation.getAddress())) {
+            public List<Firestation> selectListFirestationByStationNumber (Integer stationNumber){
+                List<Firestation> firestations = fireStationRepository.findAllFireStations();
 
-                        InfoHabitantDTO infoHabitantDTO = new InfoHabitantDTO();
+                List<Firestation> firestationListToReturn = firestations.stream()
+                        .filter(f -> f.getStation().equals(String.valueOf(stationNumber)))
+                        .collect(Collectors.toList());
 
-                        infoHabitantDTO.setLastName(person.getLastName());
-                        infoHabitantDTO.setFirstName(person.getFirstName());
-                        infoHabitantDTO.setPhone(person.getPhone());
-                        infoHabitantDTO.setAdress(person.getAddress());
-                        infoHabitantDTO.setStation(firestation.getStation());
-                        for (MedicalRecord medicalRecord : medicalRecords) {
-                            if (medicalRecord.getLastName().equals(infoHabitantDTO.getLastName())) {
-                                infoHabitantDTO.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
-                                infoHabitantDTO.setMedications(medicalRecord.getMedications());
-                                infoHabitantDTO.setAllergies(medicalRecord.getAllergies());
-                                personFoyer.add(infoHabitantDTO);
-                            }}
-                        FoyerDTO foyerDTO = new FoyerDTO();
-                        foyerDTO.setAdress(person.getAddress());
-                        foyerDTO.setStationNumber(firestation.getStation());
-                        foyerDTO.setInfoHabitant(personFoyer);
-                        listFoyers.add(foyerDTO);
-                    }}}}
-        return listFoyers;}
-}
+
+                return firestationListToReturn;
+            }
+
+            public List<Firestation> selectListFirestationByListStationNumbers (List < Integer > intList) {
+                List<Firestation> firestationListToReturn = new ArrayList<>();
+                for (Integer integer : intList) {
+                    List<Firestation> firestationList = selectListFirestationByStationNumber(integer);
+                    for (Firestation firestation : firestationList) {
+                        firestationListToReturn.add(firestation);
+                    }
+                }
+                return firestationListToReturn;
+            }
+
+            public List<Person> selectListPersonByAddress (String address){
+                List<Person> persons = personRepository.findAllPersons();
+                List<Person> personListToReturn = persons.stream()
+                        .filter(p -> p.getAddress().equals(address))
+                        .collect(Collectors.toList());
+                return personListToReturn;
+            }
+
+
+    }

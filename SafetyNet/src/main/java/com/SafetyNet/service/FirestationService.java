@@ -27,12 +27,23 @@ public class FirestationService {
 
 
     public List<Firestation> findAllFireStations(){
+
         return fireStationRepository.findAllFireStations();
     }
     public List<Firestation> findAllFireStationsNumber(String Nbr){
 
       List<Firestation> firestations=  fireStationRepository.findAllFireStations();
-        return null ;
+      List<Firestation> result = new ArrayList<Firestation>();
+
+      for(Firestation firestation:firestations){
+          if(firestation.getStation().equals(Nbr)){
+              Firestation firestation1= new Firestation();
+              firestation1.setStation(firestation.getStation());
+              firestation1.setAddress(firestation.getAddress());
+              result.add(firestation1);
+          }
+      }
+        return result;
     }
 
     public void save(Firestation firesation) {

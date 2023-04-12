@@ -59,4 +59,20 @@ public class MedicalRecordsRepository {
 
     }
 
+    public MedicalRecord selectMedicalRecordByFirstNameAndLastName(String firstName, String lastName) {
+        List<MedicalRecord> medicalRecords = dataHandler.getData().getMedicalRecords();
+        MedicalRecord medicalRecord1 =new MedicalRecord();
+        for(MedicalRecord medicalRecord:medicalRecords){
+            if(medicalRecord.getFirstName().equals(firstName) &&(medicalRecord.getLastName().equals(lastName))){
+
+                medicalRecord1.setFirstName(medicalRecord.getFirstName());
+                medicalRecord1.setLastName(medicalRecord.getLastName());
+                medicalRecord1.setAllergies(medicalRecord.getAllergies());
+                medicalRecord1.setMedications(medicalRecord.getMedications());
+                medicalRecord1.setBirthdate(medicalRecord.getBirthdate());
+            }
+        }
+
+        return medicalRecord1;
+    }
 }

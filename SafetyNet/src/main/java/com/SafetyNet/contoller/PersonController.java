@@ -78,8 +78,8 @@ public class PersonController {
 
 
     @GetMapping(value = "flood/stations={stationNumber}")
-    public List<FoyerDTO> listFoyer(@PathVariable String stationNumber) throws ParseException {
-        return personService.listFoyer(stationNumber);
+    public List<FoyerDTO> listFoyer(@PathVariable List<Integer> stationNumber) throws ParseException {
+        return personService.getListDtoFlood(stationNumber);
     }
 
     @GetMapping(value = "personInfo/firstName={firstName}/lastName={lastName}")

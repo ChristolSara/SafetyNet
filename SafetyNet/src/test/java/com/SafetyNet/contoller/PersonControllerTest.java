@@ -49,10 +49,24 @@ class PersonControllerTest {
 
     @Test
     void findAllPersons() {
+        List<Person> persons = personService.fibdAllPersons();
+        assertEquals(persons.size(),23);
     }
 
     @Test
     void findAllMail() {
+        //preparation
+        Person person = new Person("sara", "toto", "1 rue ", "aix", "00000", "kjhlyg@gmail");
+        //excution
+        personController.addPerson(person);
+
+        Person person2 = personService.findPerson("sara", "toto");
+
+//        List<InfoPersonDTO> reslt = personService.personInfo("sara","toto");
+//       InfoPersonDTO resultStream = reslt.stream().filter(p->p.getFirstName().equals("sara")).collect(Collectors.toList()).stream().findFirst().get();
+
+        assertEquals(person.getEmail(), person2.getEmail());
+
     }
 
     @Test
@@ -65,6 +79,10 @@ class PersonControllerTest {
 
     @Test
     void phoneAlertNumber() {
+        List<String> phone = personService.phoneAlert(String.valueOf(2));
+        assertEquals(phone.size(),4);
+        assert(phone).contains("841-874-6513");
+
     }
 
     @Test

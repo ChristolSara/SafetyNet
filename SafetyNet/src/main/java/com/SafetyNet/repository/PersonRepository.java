@@ -25,24 +25,21 @@ public class PersonRepository {
         dataHandler.getData().getPersons().add(person);
         return person;
     }
-//    public void deletePerson(Person person){
-//        List<Person> persons = dataHandler.getData().getPersons();
-//        int index = 0;
-//        for (Person person1 : persons) {
-//
-//            if((person1.getLastName().equals(person.getLastName())) && (person1.getFirstName().equals(person.getLastName()))){
-//
-//                persons.remove(person1);
-//                dataHandler.getData().setPersons(persons);
-//
-//            }
-//
-//        }
-//    }
+    public void deletePerson(Person person){
+        List<Person> persons = dataHandler.getData().getPersons();
+        int index = 0;
+        for (Person person1 : persons) {
+
+            if((person1.getLastName().equals(person.getLastName())) && (person1.getFirstName().equals(person.getLastName()))){
+
+                persons.remove(person1);
+                dataHandler.getData().setPersons(persons);
+
+            }
+
+        }
+    }
 //update
-public void deletePerson(Person person) {
-    dataHandler.getData().getPersons().remove(person);
-}
 
     public void update(List<Person> persons) {
         dataHandler.getData().setPersons(persons);
