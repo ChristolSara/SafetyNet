@@ -30,10 +30,38 @@ class FirestationControllerTest {
 
     @Test
     void mettreAjourFirestation() {
+
+        List<Firestation> firestations=firestationService.findAllFireStations();
+        Firestation firestation1=new Firestation("1 rue henri barbusse","7");
+        firestations.add(firestation1);
+
+        //crer lobjet de la mise a jour
+        Firestation firestation2=new Firestation("1 rue henri barbusse","64");
+
+        firestationController.mettreAjourFirestation(firestation2);
+        //
+         Firestation firestationList =firestations.stream()
+                 .filter(f -> f.getAddress().equals(firestation1.getAddress()))
+                 .findAny().get();
+         //assert
+        assertEquals(firestation2.toString(),firestationList.toString());
+
+
     }
 
     @Test
     void supprimerFirestation() {
+        List<Firestation> firestations=firestationService.findAllFireStations();
+        Firestation firestation1=new Firestation("1 rue hhh","9");
+        firestations.add(firestation1);
+
+        firestationController.supprimerFirestation(firestation1);
+        List<Firestation> firestations2=firestationService.findAllFireStations();
+
+
+        assertEquals(firestations2.contains(firestation1.toString()),false);
+
+
     }
 
     @Test
@@ -42,5 +70,14 @@ class FirestationControllerTest {
 
     @Test
     void findAllFireStationsNumber() {
+      List<Firestation> firestations = firestationService.findAllFireStations();
+      int fireSize=firestations.size();
+
+      int fire=0;
+      for(Firestation firestation:firestations){
+          fire++;
+      }
+
+      assertEquals(fireSize,fire);
     }
 }

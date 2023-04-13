@@ -59,7 +59,7 @@ public class PersonService {
     }
 
     ///////////////////
-    public void delete(Person person) {
+    public void deletePerson(Person person) {
         personRepository.deletePerson(person);
     }
 //////////////////

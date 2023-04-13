@@ -50,6 +50,25 @@ MedicalRecordController medicalRecordController;
 
     @Test
     void miseAjourMedicalRecord() {
+        List<MedicalRecord> medicalRecords=medicalRecordService.findAllMedicalRecords();
+
+        MedicalRecord medicalRecord1= new MedicalRecord("sara","kaouar","31/07/1992",new String[]{"hhhhhh"}, new String[]{"kkkkkkk"});
+
+        medicalRecords.add(medicalRecord1);
+
+        MedicalRecord medicalRecord2= new MedicalRecord("sara","kaouar","31/12/1992",new String[]{""}, new String[]{"kk"});
+
+        medicalRecordController.miseAjourMedicalRecord(medicalRecord2);
+
+        //recuperer la valeur de la medical records de  la list principal
+        MedicalRecord medicalRecordList = medicalRecords.stream()
+                .filter(medicalRecord -> medicalRecord.getLastName().equals(medicalRecord1.getLastName()))
+                .filter(medicalRecord -> medicalRecord.getFirstName().equals(medicalRecord1.getFirstName()))
+                .findAny().get();
+
+
+        assertEquals(medicalRecord1.toString(),medicalRecordList.toString());
+
     }
 
     @Test
@@ -57,7 +76,9 @@ MedicalRecordController medicalRecordController;
         List<MedicalRecord> medicalRecords = medicalRecordService.findAllMedicalRecords();
         MedicalRecord medicalRecord =new MedicalRecord("Eric","Cadigan","08/06/1945",new String[]{
                 "tradoxidine:400mg"},new String[]{});
+       int size1= medicalRecords.size();
         medicalRecords.remove(medicalRecord);
-        assertEquals(medicalRecords.size(),22);
+       int size = medicalRecords.size();
+        assertEquals(size1-1,size);
     }
 }

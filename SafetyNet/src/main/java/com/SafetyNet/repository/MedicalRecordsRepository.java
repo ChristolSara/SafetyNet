@@ -24,24 +24,24 @@ public class MedicalRecordsRepository {
         dataHandler.getData().getMedicalRecords().add(medicalRecord);
     }
 
-    public void updateMedicalRecords(MedicalRecord medicalRecord) {
+//    public void updateMedicalRecords(MedicalRecord medicalRecord) {
+//
+//        List<MedicalRecord> medicalRecords=dataHandler.getData().getMedicalRecords();
+//        for (MedicalRecord medicalRecord1:medicalRecords){
+//            if (medicalRecord1.getLastName().equals(medicalRecord.getLastName()) && medicalRecord1.getFirstName().equals(medicalRecord.getFirstName()))
+//            {
+//                medicalRecord1.setFirstName(medicalRecord.getFirstName());
+//                medicalRecord1.setLastName(medicalRecord.getLastName());
+//                medicalRecord1.setBirthdate(medicalRecord.getBirthdate());
+//                medicalRecord1.setMedications(medicalRecord.getMedications());
+//                medicalRecord1.setAllergies(medicalRecord.getAllergies());
+//
+//
+//            }
+//        }
 
-        List<MedicalRecord> medicalRecords=dataHandler.getData().getMedicalRecords();
-        for (MedicalRecord medicalRecord1:medicalRecords){
-            if (medicalRecord1.getLastName().equals(medicalRecord.getLastName()) && medicalRecord1.getFirstName().equals(medicalRecord.getFirstName()))
-            {
-                medicalRecord1.setFirstName(medicalRecord.getFirstName());
-                medicalRecord1.setLastName(medicalRecord.getLastName());
-                medicalRecord1.setBirthdate(medicalRecord.getBirthdate());
-                medicalRecord1.setMedications(medicalRecord.getMedications());
-                medicalRecord1.setAllergies(medicalRecord.getAllergies());
 
-
-            }
-        }
-
-
-    }
+ //   }
 
     public void deleteMedicalRecords(MedicalRecord medicalRecord) {
         List<MedicalRecord> medicalRecords = dataHandler.getData().getMedicalRecords();
@@ -74,5 +74,8 @@ public class MedicalRecordsRepository {
         }
 
         return medicalRecord1;
+    }
+    public void update(List<MedicalRecord> medicalRecords) {
+        dataHandler.getData().setMedicalRecords(medicalRecords);
     }
 }

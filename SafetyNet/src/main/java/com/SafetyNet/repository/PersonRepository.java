@@ -27,17 +27,17 @@ public class PersonRepository {
     }
     public void deletePerson(Person person){
         List<Person> persons = dataHandler.getData().getPersons();
-        int index = 0;
+
+        Person person2=new Person();
         for (Person person1 : persons) {
-
-            if((person1.getLastName().equals(person.getLastName())) && (person1.getFirstName().equals(person.getLastName()))){
-
-                persons.remove(person1);
-                dataHandler.getData().setPersons(persons);
+            if ((person1.getLastName().equals(person.getLastName())) &&( person1.getFirstName().equals(person.getFirstName()))) {
+               person2=person1;
 
             }
 
         }
+        persons.remove(person2);
+        dataHandler.getData().setPersons(persons);
     }
 //update
 

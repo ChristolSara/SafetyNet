@@ -41,10 +41,38 @@ class PersonControllerTest {
 
     @Test
     void mettreAjourPerson() {
+        List<Person> personList=personService.fibdAllPersons();
+        //Person person= personList.get(0);
+
+
+        Person person1=new Person("sara","aaa","1 rue hh","aix","000","ka@gmail.com");
+        personService.addPerson(person1);
+
+        Person person2=new Person("sara","aaa","ccc","ggg","777","lll@gmail.com");
+
+
+        personController.mettreAjourPerson(person2);
+        //assertEquals(person1.getPhone().toString(),"000");
+        Person personInList = personList.stream()
+                .filter(p -> p.getLastName().equals(person1.getLastName()))
+                .filter(p -> p.getFirstName().equals(person1.getFirstName()))
+                .findAny().get();
+
+        assertTrue(personInList.toString().equals(person2.toString()));
+
     }
 
     @Test
     void supprimerPerson() {
+        List<Person> personList=personService.fibdAllPersons();
+
+        Person person1= personList.get(0);
+        personController.supprimerPerson(person1);
+
+        List<Person> personList1=personService.fibdAllPersons();
+
+        assertEquals(personList1.contains(person1.toString()),false);
+
     }
 
     @Test
@@ -87,6 +115,7 @@ class PersonControllerTest {
 
     @Test
     void infoHabitant() {
+
     }
 
     @Test
@@ -99,5 +128,13 @@ class PersonControllerTest {
 
     @Test
     void findAllMailcity() {
+        List<Person> persons=personService.fibdAllPersons();
+        Person person=new Person("sara","kaouar","1 rue h ","aix en provence","005860266","kaouar@gmail.com");
+        persons.add(person);
+
+        List<String> getMail = personService.findAllMailscity("aix en provence");
+        assertEquals(getMail.contains("kaouar@gmail.com"),true);
+
+
     }
 }

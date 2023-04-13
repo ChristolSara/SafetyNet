@@ -23,8 +23,8 @@ public class MedicalRecordController {
          medicalRecordService.addMedicalRecord(medicalRecord);
     }
     @PutMapping(value = "/medicalRecord")
-    public MedicalRecord miseAjourMedicalRecord(@RequestBody MedicalRecord medicalRecord){
-        return medicalRecordService.update(medicalRecord);
+    public void miseAjourMedicalRecord(@RequestBody MedicalRecord medicalRecord){
+         medicalRecordService.update(medicalRecord);
     }
 
     @DeleteMapping(value = "/medicalRecord")

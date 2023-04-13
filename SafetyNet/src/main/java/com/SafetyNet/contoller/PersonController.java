@@ -34,7 +34,7 @@ public class PersonController {
 
     @DeleteMapping(value = "/person")
     public void supprimerPerson(@RequestBody Person person) {
-        personService.delete(person);
+        personService.deletePerson(person);
 
 
     }

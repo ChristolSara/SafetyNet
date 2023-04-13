@@ -31,8 +31,17 @@ public class MedicalRecordService {
         medicalRecordsRepository.addMedicalRecords(medicalRecord);
     }
 
-    public MedicalRecord update(MedicalRecord medicalRecord) {
-        return medicalRecord;
+    public void update(MedicalRecord medicalRecord) {
+        List<MedicalRecord> medicalRecords=medicalRecordsRepository.findAllMedicalRecords();
+
+        for(MedicalRecord medicalRecord1:medicalRecords){
+            if(medicalRecord1.getFirstName().equals(medicalRecord.getFirstName()) && medicalRecord1.getLastName().equals(medicalRecord.getLastName())){
+                medicalRecord1.setMedications(medicalRecord.getMedications());
+                medicalRecord1.setBirthdate(medicalRecord.getBirthdate());
+                medicalRecord1.setAllergies(medicalRecord.getAllergies());
+            }
+        }medicalRecordsRepository.update(medicalRecords);
+
     }
 
     public void delete(MedicalRecord medicalRecord) {

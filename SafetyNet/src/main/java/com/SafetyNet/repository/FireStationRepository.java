@@ -27,18 +27,20 @@ public class FireStationRepository {
         return firestation;
     }
     public void deleteFirestations(Firestation firestation) {
+
         List<Firestation> firestations = dataHandler.getData().getFirestations();
-        int index = 0;
+
+        Firestation firestation2=new Firestation();
+
         for (Firestation firestation1 : firestations) {
 
             if((firestation1.getStation().equals(firestation.getStation())) && (firestation1.getAddress().equals(firestation.getAddress()))){
-
-                firestations.remove(firestation1);
-                dataHandler.getData().setFirestations(firestations);
-
+                  firestation2=firestation1;
             }
 
         }
+        firestations.remove(firestation2);
+        dataHandler.getData().setFirestations(firestations);
 
     }
 
