@@ -77,14 +77,12 @@ class FirestationControllerTest {
 
     @Test
     void findAllFireStationsNumber() {
-      List<Firestation> firestations = firestationService.findAllFireStations();
-      int fireSize=firestations.size();
+        List<Firestation> firestationList = firestationService.findAllFireStations();
+        Firestation firestation=new Firestation(" 12 rue hhh","6");
+        firestationList.add(firestation);
+      List<Firestation> firestations = firestationController.findAllFireStationsNumber("6");
 
-      int fire=0;
-      for(Firestation firestation:firestations){
-          fire++;
-      }
 
-      assertEquals(fireSize,fire);
+      assertEquals(firestations.contains(firestation),true);
     }
 }

@@ -46,16 +46,18 @@ public class MedicalRecordsRepository {
     public void deleteMedicalRecords(MedicalRecord medicalRecord) {
         List<MedicalRecord> medicalRecords = dataHandler.getData().getMedicalRecords();
         int index = 0;
+        MedicalRecord medicalRecord1= new MedicalRecord();
         for (MedicalRecord medicalRecord2 : medicalRecords) {
 
             if((medicalRecord2.getLastName().equals(medicalRecord.getLastName())) && (medicalRecord2.getFirstName().equals(medicalRecord.getFirstName()))){
 
-                medicalRecords.remove(medicalRecord2);
-                dataHandler.getData().setMedicalRecords(medicalRecords);
+                medicalRecord1=medicalRecord2;
+
 
             }
 
-        }
+        }  medicalRecords.remove(medicalRecord1);
+        dataHandler.getData().setMedicalRecords(medicalRecords);
 
     }
 

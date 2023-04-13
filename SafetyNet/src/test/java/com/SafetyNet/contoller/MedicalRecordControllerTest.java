@@ -21,7 +21,7 @@ MedicalRecordController medicalRecordController;
 
     @Test
     void findAllMedicalRecords() {
-        List<MedicalRecord> medicalRecords = medicalRecordService.findAllMedicalRecords();
+        List<MedicalRecord> medicalRecords = medicalRecordController.findAllMedicalRecords();
         assertEquals(medicalRecords.size(),23);
 
     }
@@ -33,7 +33,7 @@ MedicalRecordController medicalRecordController;
 
         List<MedicalRecord> medicalRecords = medicalRecordService.findAllMedicalRecords();
 
-        medicalRecords.add(medicalRecord1);
+        medicalRecordController.addMedicalRecord(medicalRecord1);
         boolean  exciste = false;
        
         for(MedicalRecord medicalRecord:medicalRecords){
@@ -77,7 +77,7 @@ MedicalRecordController medicalRecordController;
         MedicalRecord medicalRecord =new MedicalRecord("Eric","Cadigan","08/06/1945",new String[]{
                 "tradoxidine:400mg"},new String[]{});
        int size1= medicalRecords.size();
-        medicalRecords.remove(medicalRecord);
+        medicalRecordController.supprimermedicalRecord(medicalRecord);
        int size = medicalRecords.size();
         assertEquals(size1-1,size);
     }

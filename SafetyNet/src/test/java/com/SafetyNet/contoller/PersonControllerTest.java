@@ -78,22 +78,24 @@ class PersonControllerTest {
     @Test
     void findAllPersons() {
         List<Person> persons = personService.fibdAllPersons();
-        assertEquals(persons.size(),23);
+        List<Person> personList = personController.findAllPersons();
+        assertEquals(persons.size(),personList.size());
     }
 
     @Test
     void findAllMail() {
         //preparation
+        List<Person> persons=personService.fibdAllPersons();
         Person person = new Person("sara", "toto", "1 rue ", "aix", "00000", "kjhlyg@gmail");
         //excution
-        personController.addPerson(person);
+        persons.add(person);
+       List<String> mails= personController.findAllMail();
 
-        Person person2 = personService.findPerson("sara", "toto");
 
 //        List<InfoPersonDTO> reslt = personService.personInfo("sara","toto");
 //       InfoPersonDTO resultStream = reslt.stream().filter(p->p.getFirstName().equals("sara")).collect(Collectors.toList()).stream().findFirst().get();
 
-        assertEquals(person.getEmail(), person2.getEmail());
+        assertTrue(mails.contains(String.valueOf(person.getEmail())));
 
     }
 
@@ -107,7 +109,7 @@ class PersonControllerTest {
 
     @Test
     void phoneAlertNumber() {
-        List<String> phone = personService.phoneAlert(String.valueOf(2));
+        List<String> phone = personController.phoneAlertNumber("2");
         assertEquals(phone.size(),4);
         assert(phone).contains("841-874-6513");
 
@@ -147,7 +149,8 @@ class PersonControllerTest {
         Person person=new Person("sara","kaouar","1 rue h ","aix en provence","005860266","kaouar@gmail.com");
         persons.add(person);
 
-        List<String> getMail = personService.findAllMailscity("aix en provence");
+        List<String> getMail = personController.findAllMailcity("aix en provence");
+
         assertEquals(getMail.contains("kaouar@gmail.com"),true);
 
 
