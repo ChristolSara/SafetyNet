@@ -114,7 +114,8 @@ class PersonControllerTest {
     }
 
     @Test
-    void infoHabitant() {
+    void infoHabitant() throws ParseException {
+
 
     }
 
@@ -123,7 +124,21 @@ class PersonControllerTest {
     }
 
     @Test
-    void personInfo() {
+    void personInfo() throws ParseException {
+
+        List<InfoPersonDTO> listInfo= personController.personInfo("sara","kaouar");
+        InfoPersonDTO infoPersonDTO=new InfoPersonDTO("sara","kaouar","1 rue henri barbusse","30","2",new String[]{""}, new String[]{"kk"});
+         listInfo.add(infoPersonDTO);
+
+
+       InfoPersonDTO  listResult = listInfo.stream()
+               .filter(infoPersonDTO1 -> infoPersonDTO1.getFirstName().equals("sara"))
+               .filter(infoPersonDTO1 -> infoPersonDTO1.getlastName().equals("kaouar"))
+
+               .findAny().get();
+
+       assertEquals(listResult.getAdress(),infoPersonDTO.getAdress());
+
     }
 
     @Test

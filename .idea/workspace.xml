@@ -4,35 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="crud testtest">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_archiver_3_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_compat_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_plugins_maven_assembly_plugin_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_artifact_transfer_0_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_common_artifact_filters_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_filtering_3_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_shared_utils_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_archiver_3_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_io_2_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_iq80_snappy_snappy_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonatype_plexus_plexus_build_api_0_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_tukaani_xz_1_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_manager_2_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_manager_2_0_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_shared_io_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_shared_maven_shared_io_3_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_provider_api_1_0_alpha_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_provider_api_2_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_interpolation_1_14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_interpolation_1_24.xml" afterDir="false" />
+    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="testtest 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/MedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/MedicalRecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/FireStationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/FireStationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/MedicalRecordsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/MedicalRecordsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/MedicalRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/MedicalRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/InfoPersonDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/DTO/InfoPersonDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/FirestationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/FirestationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/MedicalRecordControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/MedicalRecordControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +73,23 @@
       <recent name="com.SafetyNet.contoller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FirestationControllerTest.supprimerFirestation">
+  <component name="RunManager" selected="JUnit.PersonControllerTest.personInfo">
+    <configuration name="FirestationControllerTest.allFireStations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SafetyNet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.SafetyNet.contoller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
+      <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.FirestationControllerTest" />
+      <option name="METHOD_NAME" value="allFireStations" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FirestationControllerTest.mettreAjourFirestation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SafetyNet" />
       <extension name="coverage">
@@ -147,7 +138,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonControllerTest.mettreAjourPerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersonControllerTest.personInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SafetyNet" />
       <extension name="coverage">
         <pattern>
@@ -157,23 +148,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
       <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.PersonControllerTest" />
-      <option name="METHOD_NAME" value="mettreAjourPerson" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonControllerTest.supprimerPerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafetyNet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.SafetyNet.contoller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
-      <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.PersonControllerTest" />
-      <option name="METHOD_NAME" value="supprimerPerson" />
+      <option name="METHOD_NAME" value="personInfo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PersonControllerTest.personInfo" />
+        <item itemvalue="JUnit.FirestationControllerTest.allFireStations" />
         <item itemvalue="JUnit.FirestationControllerTest.supprimerFirestation" />
         <item itemvalue="JUnit.FirestationControllerTest.mettreAjourFirestation" />
         <item itemvalue="JUnit.MedicalRecordControllerTest.miseAjourMedicalRecord" />
-        <item itemvalue="JUnit.PersonControllerTest.mettreAjourPerson" />
-        <item itemvalue="JUnit.PersonControllerTest.supprimerPerson" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681301742125</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="testtest 2">
+      <created>1681382410941</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681382410941</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -306,7 +288,8 @@
     <MESSAGE value="fin des requettes" />
     <MESSAGE value="début test" />
     <MESSAGE value="crud testtest" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud testtest" />
+    <MESSAGE value="testtest 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="testtest 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -477,6 +460,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
+          <line>126</line>
+          <properties class="com.SafetyNet.contoller.PersonControllerTest" method="personInfo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

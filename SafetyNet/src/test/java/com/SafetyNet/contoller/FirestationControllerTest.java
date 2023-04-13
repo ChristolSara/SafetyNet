@@ -66,6 +66,13 @@ class FirestationControllerTest {
 
     @Test
     void allFireStations() {
+        List<Firestation> firestations=firestationService.findAllFireStations();
+
+        Firestation firestation=new Firestation("23 rue henri ","22");
+        firestations.add(firestation);
+        List<Firestation> firestationList= firestationController.AllFireStations();
+
+        assertEquals(firestationList.contains(firestation),true);
     }
 
     @Test
