@@ -221,8 +221,6 @@ public class PersonService {
         List<Firestation> firestations = fireStationRepository.findAllFireStations();
 
         List<InfoFirePersonDTO> habitantDTOList = new ArrayList<InfoFirePersonDTO>();
-
-
         InfoHabitantStationDTO infoHabitantStationDTO = new InfoHabitantStationDTO();
 
         int decompteMajeur = 0;
@@ -236,24 +234,17 @@ public class PersonService {
                             if ((medicalrecord.getLastName().equals(person.getLastName())) && ((medicalrecord.getFirstName().equals(person.getFirstName())))) {
                                 String age = String.valueOf(computeAge(medicalrecord.getBirthdate()));
                                 if ((Integer.valueOf(age)) > 18) {
-                                    decompteMajeur = decompteMajeur + 1;
-
+                                    decompteMajeur ++;
 
                                 } else {
-                                    decompteMineur = decompteMineur + 1;
+                                    decompteMineur++;
                                 }
                                 habitantDTOList.add(new InfoFirePersonDTO(person.getFirstName(), person.getLastName(), person.getAddress(), person.getPhone(), age));
-
                             }
-
-                        }
-
-
-                    }
-                }
+                        }}}
         infoHabitantStationDTO.setHabitantDTOList(habitantDTOList);
-        infoHabitantStationDTO.setMajeur(" le nombre des personnes majeur est " + decompteMajeur);
-        infoHabitantStationDTO.setMineur(" le nombre des personnes mineur est " + decompteMineur);
+        infoHabitantStationDTO.setMajeur(String.valueOf(decompteMajeur));
+        infoHabitantStationDTO.setMineur(String.valueOf(decompteMineur));
 
     }}
         return infoHabitantStationDTO;

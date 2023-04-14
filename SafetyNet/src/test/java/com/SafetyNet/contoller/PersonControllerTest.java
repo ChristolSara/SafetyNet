@@ -105,7 +105,7 @@ class PersonControllerTest {
     void infoHabitantStation(){
 
       InfoHabitantStationDTO infoHabit= personController.infoHabitantStation(2);
-      assertEquals(" le nombre des personnes majeur est 4",infoHabit.getMajeur());
+      assertEquals("4",infoHabit.getMajeur());
     }
 
     @Test
