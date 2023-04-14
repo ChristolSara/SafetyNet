@@ -55,7 +55,7 @@ public class PersonController {
 
     //cette method retourne info dhabitant par rapport à son station num
     @GetMapping(value = "firestation/stationNumber={station_number}")
-    public InfoHabitantStationDTO infoHabitantStation(@PathVariable String station_number) throws ParseException {
+    public InfoHabitantStationDTO infoHabitantStation(@PathVariable Integer station_number) {
         return personService.infoHabitantStation(station_number);
     }
 

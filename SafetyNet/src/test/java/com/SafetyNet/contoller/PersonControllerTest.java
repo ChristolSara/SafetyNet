@@ -102,11 +102,10 @@ class PersonControllerTest {
     }
 
     @Test
-    void infoHabitantStation() throws ParseException {
+    void infoHabitantStation(){
 
-      InfoHabitantStationDTO infoHabit= personController.infoHabitantStation("2");
-
-
+      InfoHabitantStationDTO infoHabit= personController.infoHabitantStation(2);
+      assertEquals(" le nombre des personnes majeur est 4",infoHabit.getMajeur());
     }
 
     @Test

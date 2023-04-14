@@ -169,7 +169,7 @@ public class PersonService {
     }
 //fonction qui permet de compter l'age a partir de date de naissance
 
-    public Integer computeAge(String age) throws ParseException {
+    public Integer computeAge(String age) {
 
         DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
         formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -214,12 +214,14 @@ public class PersonService {
     }
 
     //cette method retourne les info dhabitant pa rapport à  leur stationfire
-    public InfoHabitantStationDTO infoHabitantStation(String station_number) throws ParseException {
+    public InfoHabitantStationDTO infoHabitantStation(Integer station_number) {
+
         List<Person> persons = personRepository.findAllPersons();
         List<MedicalRecord> medicalRecords = medicalRecordsRepository.findAllMedicalRecords();
         List<Firestation> firestations = fireStationRepository.findAllFireStations();
 
-        List<InfoHabitantDTO> habitantDTOList = new ArrayList<InfoHabitantDTO>();
+        List<InfoFirePersonDTO> habitantDTOList = new ArrayList<InfoFirePersonDTO>();
+
 
         InfoHabitantStationDTO infoHabitantStationDTO = new InfoHabitantStationDTO();
 
@@ -227,37 +229,33 @@ public class PersonService {
         int decompteMineur = 0;
 
         for (Firestation firestation : firestations) {
-            if (firestation.getStation().equals(station_number)) {
-                InfoHabitantDTO infoHabitant = new InfoHabitantDTO();
-
-                infoHabitant.setAdress(firestation.getAddress());
-                infoHabitant.setStation(firestation.getStation());
-
+            if (firestation.getStation().equals(station_number.toString())) {
                 for (Person person : persons) {
                     if (person.getAddress().equals(firestation.getAddress())) {
-                        infoHabitant.setLastName(person.getLastName());
-                        infoHabitant.setFirstName(person.getFirstName());
-                        infoHabitant.setPhone(person.getPhone());
-                        for (MedicalRecord medicalRecord : medicalRecords) {
-                            if (medicalRecord.getLastName().equals(infoHabitant.getLastName())) {
-                                infoHabitant.setAge(String.valueOf(computeAge(medicalRecord.getBirthdate())));
+                        for (MedicalRecord medicalrecord : medicalRecords) {
+                            if ((medicalrecord.getLastName().equals(person.getLastName())) && ((medicalrecord.getFirstName().equals(person.getFirstName())))) {
+                                String age = String.valueOf(computeAge(medicalrecord.getBirthdate()));
+                                if ((Integer.valueOf(age)) > 18) {
+                                    decompteMajeur = decompteMajeur + 1;
+
+
+                                } else {
+                                    decompteMineur = decompteMineur + 1;
+                                }
+                                habitantDTOList.add(new InfoFirePersonDTO(person.getFirstName(), person.getLastName(), person.getAddress(), person.getPhone(), age));
 
                             }
+
                         }
+
+
                     }
                 }
-                if ((Integer.valueOf(infoHabitant.getAge())) > 18) {
-                    decompteMajeur = decompteMajeur + 1;
-
-                } else {
-                    decompteMineur = decompteMineur + 1;
-                }
-                habitantDTOList.add(infoHabitant);
-            }
-        }
         infoHabitantStationDTO.setHabitantDTOList(habitantDTOList);
         infoHabitantStationDTO.setMajeur(" le nombre des personnes majeur est " + decompteMajeur);
         infoHabitantStationDTO.setMineur(" le nombre des personnes mineur est " + decompteMineur);
+
+    }}
         return infoHabitantStationDTO;
     }
 

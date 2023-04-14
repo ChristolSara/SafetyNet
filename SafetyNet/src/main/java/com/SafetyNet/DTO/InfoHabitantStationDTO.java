@@ -9,7 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class InfoHabitantStationDTO {
-    private List<InfoHabitantDTO> habitantDTOList;
+    private List<InfoFirePersonDTO> habitantDTOList;
 
     private  String majeur;
     private String mineur;
