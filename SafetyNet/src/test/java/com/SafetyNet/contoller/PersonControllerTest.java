@@ -1,5 +1,7 @@
 package com.SafetyNet.contoller;
 
+import com.SafetyNet.DTO.InfoHabitantDTO;
+import com.SafetyNet.DTO.InfoHabitantStationDTO;
 import com.SafetyNet.DTO.InfoPersonDTO;
 import com.SafetyNet.model.Person;
 import com.SafetyNet.service.PersonService;
@@ -100,7 +102,11 @@ class PersonControllerTest {
     }
 
     @Test
-    void infoHabitantStation() {
+    void infoHabitantStation() throws ParseException {
+
+      InfoHabitantStationDTO infoHabit= personController.infoHabitantStation("2");
+
+
     }
 
     @Test
@@ -118,12 +124,18 @@ class PersonControllerTest {
     @Test
     void infoHabitant() throws ParseException {
 
+        List<Person> personList=personService.fibdAllPersons();
+        Person person1=personList.get(0);
+
+       List<InfoHabitantDTO> info =  personController.infoHabitant(person1.getAddress());
+
+       assertEquals(info.get(0).getFirstName(),person1.getFirstName());
+        assertEquals(info.get(2).getStation(),"3");
+        assertEquals(info.get(1).getAdress(),person1.getAddress());
 
     }
 
-    @Test
-    void listFoyer() {
-    }
+
 
     @Test
     void personInfo() throws ParseException {
@@ -154,5 +166,9 @@ class PersonControllerTest {
         assertEquals(getMail.contains("kaouar@gmail.com"),true);
 
 
+    }
+
+    @Test
+    void getListDtoFlood() {
     }
 }

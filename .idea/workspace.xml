@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="testtest 3">
+    <list default="true" id="4a2d418c-a011-40ce-a4e0-1e86cec160f8" name="Changes" comment="fin test controlle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/MedicalRecordsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/repository/MedicalRecordsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/FirestationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/FirestationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/MedicalRecordControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/MedicalRecordControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/main/java/com/SafetyNet/contoller/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,19 +72,16 @@
       <recent name="com.SafetyNet.contoller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonControllerTest.findAllPersons">
-    <configuration name="FirestationControllerTest.findAllFireStationsNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PersonControllerTest.infoHabitantStation">
+    <configuration name="SafetyNetApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.SafetyNet.SafetyNetApplication" />
       <module name="SafetyNet" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.SafetyNet.contoller.*" />
+          <option name="PATTERN" value="com.SafetyNet.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
-      <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.FirestationControllerTest" />
-      <option name="METHOD_NAME" value="findAllFireStationsNumber" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,22 +97,6 @@
       <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
       <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.PersonControllerTest" />
       <option name="METHOD_NAME" value="findAllMail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonControllerTest.findAllMailcity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SafetyNet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.SafetyNet.contoller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
-      <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.PersonControllerTest" />
-      <option name="METHOD_NAME" value="findAllMailcity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,7 +118,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonControllerTest.phoneAlertNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersonControllerTest.infoHabitant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SafetyNet" />
       <extension name="coverage">
         <pattern>
@@ -149,7 +128,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
       <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.PersonControllerTest" />
-      <option name="METHOD_NAME" value="phoneAlertNumber" />
+      <option name="METHOD_NAME" value="infoHabitant" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest.infoHabitantStation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SafetyNet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.SafetyNet.contoller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.SafetyNet.contoller" />
+      <option name="MAIN_CLASS_NAME" value="com.SafetyNet.contoller.PersonControllerTest" />
+      <option name="METHOD_NAME" value="infoHabitantStation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PersonControllerTest.infoHabitantStation" />
+        <item itemvalue="JUnit.PersonControllerTest.infoHabitant" />
+        <item itemvalue="Application.SafetyNetApplication" />
         <item itemvalue="JUnit.PersonControllerTest.findAllPersons" />
         <item itemvalue="JUnit.PersonControllerTest.findAllMail" />
-        <item itemvalue="JUnit.PersonControllerTest.phoneAlertNumber" />
-        <item itemvalue="JUnit.PersonControllerTest.findAllMailcity" />
-        <item itemvalue="JUnit.FirestationControllerTest.findAllFireStationsNumber" />
       </list>
     </recent_temporary>
   </component>
@@ -279,8 +274,26 @@
       <option name="project" value="LOCAL" />
       <updated>1681389250339</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fin test controlle">
+      <created>1681394397416</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681394397416</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2 commit person,firestation  model ,controler" />
@@ -298,7 +311,8 @@
     <MESSAGE value="crud testtest" />
     <MESSAGE value="testtest 2" />
     <MESSAGE value="testtest 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="testtest 3" />
+    <MESSAGE value="fin test controlle" />
+    <option name="LAST_COMMIT_MESSAGE" value="fin test controlle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -395,17 +409,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>73</line>
+          <line>75</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>71</line>
+          <line>73</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>69</line>
+          <line>71</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -420,27 +434,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>43</line>
+          <line>45</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>44</line>
+          <line>46</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>47</line>
+          <line>49</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>53</line>
+          <line>55</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>54</line>
+          <line>56</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -463,7 +477,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>42</line>
+          <line>44</line>
           <properties class="com.SafetyNet.contoller.PersonControllerTest" method="mettreAjourPerson">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -472,7 +486,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/SafetyNet/src/test/java/com/SafetyNet/contoller/PersonControllerTest.java</url>
-          <line>128</line>
+          <line>140</line>
           <properties class="com.SafetyNet.contoller.PersonControllerTest" method="personInfo">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

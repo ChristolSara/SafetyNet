@@ -78,7 +78,7 @@ public class PersonController {
 
 
     @GetMapping(value = "flood/stations={stationNumber}")
-    public List<FoyerDTO> listFoyer(@PathVariable List<Integer> stationNumber) throws ParseException {
+    public List<FoyerDTO> getListDtoFlood(@PathVariable List<Integer> stationNumber) throws ParseException {
         return personService.getListDtoFlood(stationNumber);
     }
 
